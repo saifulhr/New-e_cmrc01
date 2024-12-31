@@ -1,4 +1,5 @@
 import 'package:e_cmrc/screen/home/my_orders.dart';
+import 'package:e_cmrc/screen/profile/settting_page.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -213,7 +214,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const MyOrders()),
+                      MaterialPageRoute(builder: (context) => const SetttingPage()),
                     );
                   },
                   child: const Padding(
