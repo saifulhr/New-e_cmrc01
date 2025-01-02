@@ -1,3 +1,4 @@
+import 'package:e_cmrc/data/orderlist_json.dart';
 import 'package:flutter/material.dart';
 
 class OrderDetails extends StatefulWidget {
@@ -5,39 +6,7 @@ class OrderDetails extends StatefulWidget {
 
   @override
   State<OrderDetails> createState() => _OrderDetailsState();
-}
-
-class _OrderDetailsState extends State<OrderDetails> {
-  final orderdetails = [
-    {
-      'title': 'Pullover',
-      'detail': 'Mango',
-      'color': 'Grey',
-      'size': 'L',
-      'units': '1',
-      'image': 'assets/images/orders03.jpg',
-      'price': '51\$',
-    },
-    {
-      'title': 'Pullover',
-      'detail': 'Orange',
-      'color': 'Red',
-      'size': 'M',
-      'units': '2',
-      'image': 'assets/images/images.jpg',
-      'price': '71\$',
-    },
-    {
-      'title': 'Pullover',
-      'detail': 'Tango',
-      'color': 'Black',
-      'size': 'XL',
-      'units': '3',
-      'image': 'assets/images/order02.jpg',
-      'price': '91\$',
-    },
-  ];
-
+}class _OrderDetailsState extends State<OrderDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -188,7 +157,7 @@ class _OrderDetailsState extends State<OrderDetails> {
                                 const SizedBox(width: 20),
                                 const Text(
                                   'Size:',
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                       color: Colors.grey, fontSize: 10),
                                 ),
                                 Text(
