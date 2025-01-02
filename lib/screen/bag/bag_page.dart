@@ -1,4 +1,5 @@
 import 'package:e_cmrc/data/baglist_json.dart';
+import 'package:e_cmrc/screen/bag/checkout_page.dart';
 import 'package:flutter/material.dart';
 
 class BagPage extends StatefulWidget {
@@ -524,22 +525,27 @@ class _BagPageState extends State<BagPage> {
               const SizedBox(
                 height: 30,
               ),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: null,
-                  style: ButtonStyle(
-                      padding: WidgetStateProperty.all(
-                        const EdgeInsets.symmetric(
-                            vertical: 12, horizontal: 20),
-                      ),
-                      backgroundColor: const WidgetStatePropertyAll(Colors.red),
-                      shape: WidgetStatePropertyAll(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20)))),
-                  child: const Text(
-                    'CHECK OUT',
-                    style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.w600),
+              InkWell(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> const CheckoutPage()));
+                },
+                child: SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: null,
+                    style: ButtonStyle(
+                        padding: WidgetStateProperty.all(
+                          const EdgeInsets.symmetric(
+                              vertical: 12, horizontal: 20),
+                        ),
+                        backgroundColor: const WidgetStatePropertyAll(Colors.red),
+                        shape: WidgetStatePropertyAll(RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20)))),
+                    child: const Text(
+                      'CHECK OUT',
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.w600),
+                    ),
                   ),
                 ),
               ),
