@@ -1,3 +1,4 @@
+import 'package:e_cmrc/screen/authentication/log_in.dart';
 import 'package:e_cmrc/screen/home/my_orders.dart';
 import 'package:e_cmrc/screen/profile/settting_page.dart';
 import 'package:flutter/material.dart';
@@ -233,6 +234,35 @@ class _ProfilePageState extends State<ProfilePage> {
                               'Notifications,password',
                               style:
                                   TextStyle(color: Colors.grey, fontSize: 10),
+                            ),
+                          ],
+                        ),
+                        Spacer(),
+                        Icon(Icons.arrow_forward_ios, size: 16),
+                      ],
+                    ),
+                  ),
+                ),
+                Divider(color: Colors.grey.shade100,),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>LogInPage()));
+                  },
+                  child: const Padding(
+                    padding: EdgeInsets.all(1),
+                    child: Row(
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Log Out',
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.w700),
+                            ),
+                            Text(
+                              'Click to log out',
+                              style: TextStyle(color: Colors.grey, fontSize: 10),
                             ),
                           ],
                         ),

@@ -1,9 +1,7 @@
-import 'dart:developer';
-
 import 'package:e_cmrc/screen/authentication/forgot_pass.dart';
+import 'package:e_cmrc/screen/authentication/sign_up.dart';
+import 'package:e_cmrc/screen/navigation_screen.dart';
 import 'package:flutter/material.dart';
-
-
 
 class LogInPage extends StatefulWidget {
   const LogInPage({super.key});
@@ -14,8 +12,14 @@ class LogInPage extends StatefulWidget {
 
 class _LogInPageState extends State<LogInPage> {
   GlobalKey<FormState> key = GlobalKey<FormState>();
-  final TextEditingController _Emailcontroller = TextEditingController();
-  final TextEditingController _Passcontroller = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  
+
+  bool isLogin = false;
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,106 +52,99 @@ class _LogInPageState extends State<LogInPage> {
               const SizedBox(
                 height: 70,
               ),
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(8),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.1),
-                      blurRadius: 1,
-                      offset: const Offset(0, 1),
-                    ),
-                  ],
-                ),
-                
-                 child: Form(
-                  key: key,
-                  child: TextFormField(
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'This Feild cannot be empty';
-                      }
-                      return null;
-                    },
-                    controller: _Passcontroller,
-                    keyboardType: TextInputType.visiblePassword,
-                    decoration: const InputDecoration(
-                      hintText:  'Password',
-                      labelStyle: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 16,
-                      ),
-                      filled: true,
-                      fillColor: Colors.white,
-                      contentPadding:
-                          EdgeInsets.symmetric(vertical: 20.0, horizontal: 16.0),
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                          borderSide: BorderSide(width: .5, color: Colors.white)),
-                      errorBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                          borderSide: BorderSide(width: .5, color: Colors.red)),
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                          borderSide: BorderSide(width: .5, color: Colors.white)),
-                      focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                          borderSide: BorderSide(width: .5, color: Colors.grey)),
-                    ),
-                  ),
-                ),
-              ),
               const SizedBox(
                 height: 14,
               ),
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(8),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.1),
-                      blurRadius: 1,
-                      offset: const Offset(0, 1),
+              Form(
+                key: key,
+                child: Column(
+                  children: [
+                    TextFormField(
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'This Feild cannot be empty';
+                        }
+                        return null;
+                      },
+                      controller: emailController,
+                      keyboardType: TextInputType.visiblePassword,
+                      decoration: const InputDecoration(
+                        hintText: 'Email',
+                        labelStyle: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 16,
+                        ),
+                        filled: true,
+                        fillColor: Colors.white,
+                        contentPadding: EdgeInsets.symmetric(
+                            vertical: 20.0, horizontal: 16.0),
+                        border: OutlineInputBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10)),
+                            borderSide:
+                                BorderSide(width: .5, color: Colors.grey)),
+                        errorBorder: OutlineInputBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10)),
+                            borderSide:
+                                BorderSide(width: .5, color: Colors.red)),
+                        enabledBorder: OutlineInputBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10)),
+                            borderSide:
+                                BorderSide(width: .5, color: Colors.grey)),
+                        focusedBorder: OutlineInputBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10)),
+                            borderSide:
+                                BorderSide(width: .5, color: Colors.grey)),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    TextFormField(
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'This Feild cannot be empty';
+                        }
+                        return null;
+                      },
+                      controller: passwordController,
+                      keyboardType: TextInputType.visiblePassword,
+                      decoration: const InputDecoration(
+                        hintText: 'Password',
+                        labelStyle: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 16,
+                        ),
+                        filled: true,
+                        fillColor: Colors.white,
+                        contentPadding: EdgeInsets.symmetric(
+                            vertical: 20.0, horizontal: 16.0),
+                        border: OutlineInputBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10)),
+                            borderSide:
+                                BorderSide(width: .5, color: Colors.grey)),
+                        errorBorder: OutlineInputBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10)),
+                            borderSide:
+                                BorderSide(width: .5, color: Colors.red)),
+                        enabledBorder: OutlineInputBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10)),
+                            borderSide:
+                                BorderSide(width: .5, color: Colors.grey)),
+                        focusedBorder: OutlineInputBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10)),
+                            borderSide:
+                                BorderSide(width: .5, color: Colors.grey)),
+                      ),
                     ),
                   ],
-                ),
-                 child: Form(
-                  key: key,
-                  child: TextFormField(
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'This Feild cannot be empty';
-                      }
-                      return null;
-                    },
-                    controller: _Passcontroller,
-                    keyboardType: TextInputType.visiblePassword,
-                    decoration: const InputDecoration(
-                      hintText:  'Password',
-                      labelStyle: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 16,
-                      ),
-                      filled: true,
-                      fillColor: Colors.white,
-                      contentPadding:
-                          EdgeInsets.symmetric(vertical: 20.0, horizontal: 16.0),
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                          borderSide: BorderSide(width: .5, color: Colors.white)),
-                      errorBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                          borderSide: BorderSide(width: .5, color: Colors.red)),
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                          borderSide: BorderSide(width: .5, color: Colors.white)),
-                      focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                          borderSide: BorderSide(width: .5, color: Colors.grey)),
-                    ),
-                  ),
                 ),
               ),
               const SizedBox(
@@ -160,7 +157,8 @@ class _LogInPageState extends State<LogInPage> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const ForgotPass()),
+                        MaterialPageRoute(
+                            builder: (context) => const ForgotPass()),
                       );
                     },
                     child: const Text(
@@ -185,23 +183,16 @@ class _LogInPageState extends State<LogInPage> {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    if (key.currentState?.validate() ?? false) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Form is Valid')),
-                      );
-                      log('''
-User Email: ${_Emailcontroller.text}                                                            
-User Password: ${_Passcontroller.text}                               
-                              ''');
-                    } else {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Please fix the errors')),
-                      );
-                    }
+                    setState(() {
+                      isLogin = true;
+                    });
+                    Future.delayed(Duration(seconds: 5)).then((value) {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>const BottomNavScreen()));
+                    },);
                   },
                   style: ButtonStyle(
                     padding: WidgetStateProperty.all(
-                      const EdgeInsets.symmetric(vertical: 3, horizontal: 10),
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                     ),
                     backgroundColor: WidgetStateProperty.all(Colors.red),
                     shape: WidgetStateProperty.all(
@@ -210,10 +201,18 @@ User Password: ${_Passcontroller.text}
                       ),
                     ),
                   ),
-                  child: const Text(
-                    'LOGIN',
-                    style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.w400),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      if(isLogin)
+                      const CircularProgressIndicator(color: Colors.white,)
+                      else
+                      const Text(
+                        'LOGIN',
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.w400),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -265,7 +264,37 @@ User Password: ${_Passcontroller.text}
                     ),
                   ),
                 ],
-              )
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SignUpPage()),
+                      );
+                    },
+                    child: const Text(
+                      'Not registered? ',
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                  const Icon(
+                    Icons.arrow_forward,
+                    size: 20,
+                    color: Colors.red,
+                  ),
+                ],
+              ),
+              
             ],
           ),
         ),

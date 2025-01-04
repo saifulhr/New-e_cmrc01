@@ -1,3 +1,4 @@
+import 'package:e_cmrc/screen/authentication/log_in.dart';
 import 'package:e_cmrc/screen/navigation_screen.dart';
 import 'package:flutter/material.dart';
 void main() {
@@ -16,8 +17,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: BottomNavScreen(),
-    
+      home: LogInPage(),
     );
   }
 }
