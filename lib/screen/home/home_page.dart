@@ -420,7 +420,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                                 const Text(
                                   'Size:',
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                       color: Colors.grey, fontSize: 12),
                                 ),
                                 Text(

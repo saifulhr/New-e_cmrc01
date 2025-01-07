@@ -186,7 +186,8 @@ class _LogInPageState extends State<LogInPage> {
                     setState(() {
                       isLogin = true;
                     });
-                    Future.delayed(Duration(seconds: 5)).then((value) {
+                    Future.delayed(const Duration(seconds: 5)).then((value) {
+                    // ignore: use_build_context_synchronously
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>const BottomNavScreen()));
                     },);
                   },

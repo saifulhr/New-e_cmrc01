@@ -195,6 +195,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                   const SizedBox(height: 20,),
                   InkWell(
                     onTap: () {
+                      // ignore: prefer_const_constructors
                       Navigator.push(context, MaterialPageRoute(builder: (context)=>PaymentcardPage()));
                     },
                     child: SizedBox(

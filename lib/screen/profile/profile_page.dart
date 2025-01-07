@@ -246,7 +246,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 Divider(color: Colors.grey.shade100,),
                 InkWell(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>LogInPage()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>const LogInPage()));
                   },
                   child: const Padding(
                     padding: EdgeInsets.all(1),

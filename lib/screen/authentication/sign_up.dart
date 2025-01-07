@@ -122,7 +122,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                 BorderSide(width: .5, color: Colors.grey)),
                       ),
                     ),
-                    SizedBox(height: 13,),
+                    const SizedBox(height: 13,),
                     TextFormField(
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -169,7 +169,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => LogInPage()),
+                        MaterialPageRoute(builder: (context) => const LogInPage()),
                       );
                     },
                     child: const Text(

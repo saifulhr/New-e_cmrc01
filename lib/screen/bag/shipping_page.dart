@@ -141,7 +141,7 @@ class _ShippingPageState extends State<ShippingPage> {
                   ),
                 ),
               ),
-              SizedBox(height: 15,),
+              const SizedBox(height: 15,),
               Container(
                 height: 140,
                 decoration: BoxDecoration(
@@ -240,7 +240,7 @@ class _ShippingPageState extends State<ShippingPage> {
                   ),
                 ),
               ),
-              SizedBox(height: 15,),
+              const SizedBox(height: 15,),
               Container(
                 height: 140,
                 decoration: BoxDecoration(
@@ -339,10 +339,10 @@ class _ShippingPageState extends State<ShippingPage> {
                   ),
                 ),
               ),
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               InkWell(
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=> AddshippingPage()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> const AddshippingPage()));
                 },
                 child: Align(
                   alignment: Alignment.centerRight,
